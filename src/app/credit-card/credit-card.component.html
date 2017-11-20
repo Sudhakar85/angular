@@ -1,0 +1,10 @@
+<h1>Credit Card</h1>
+<form #creditCardForm="ngForm" (change)="formChanged(creditCardForm.value)">
+  Name on Card: <input type="text" name="nameOnCard" required [(ngModel)]="vm.nameOnCard" /><br/>
+  Card number: <input type="text" name="cardNumber" required [(ngModel)]="vm.cardNumber" /><br/>
+  States: <select name="state" [(ngModel)]="vm.state" required>
+    <option>Select State</option>
+    <option *ngFor="let state of vm.states">{{state}}</option>
+  </select>
+  <button type="submit" [disabled]="!creditCardForm.valid">Save</button>
+</form>

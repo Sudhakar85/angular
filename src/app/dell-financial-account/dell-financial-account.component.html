@@ -1,0 +1,5 @@
+<h1>Dell Financial Account</h1>
+<form #dfaForm="ngForm" (change)="formChanged(dfaForm.value)">
+  Account Number: <input type="text" name="accountNumber" required [(ngModel)]="vm.accountNumber" /><br/>
+  Name: <input type="text" name="name" required [(ngModel)]="vm.name" /><br/>
+</form>

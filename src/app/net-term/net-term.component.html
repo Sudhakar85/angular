@@ -1,0 +1,5 @@
+<h1>Net Terms</h1>
+<form #netTermsForm="ngForm" (change)="formChanged(netTermsForm.value)">
+  Terms: <input type="text" name="term" required [(ngModel)]="vm.term" /><br/>
+  Frequency: <input type="text" name="frequency" required [(ngModel)]="vm.frequency" /><br/>
+</form>

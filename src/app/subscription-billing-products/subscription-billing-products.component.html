@@ -1,0 +1,17 @@
+<p>
+  subscription-billing-products works!
+</p>
+
+  <div *ngFor="let product of products; let i  = index">
+    <h2>{{product.title}}</h2>
+    <select name="payments" [(ngModel)]="product.selectedPayment" (change)="onPaymentChange(product.selectedPayment, i+1)">
+      <option>Select Payment</option>
+      <option *ngFor="let payment of product.paymentMethods">{{payment.paymentName}}</option>
+    </select>
+    <div #containerRef id="{{i+1}}">
+    </div>
+    <h3>{{product.disclosureText}}</h3>
+    <input name type="checkbox" [(ngModel)]="product.disclosureConfirmation" [checked]="product.disclosureConfirmation" /> Confirm disclosure
+    <hr>
+  </div>
+
